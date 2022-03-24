@@ -18,6 +18,7 @@ public class Post {
     // used to store the data as binary data
     private String body;
     private String author;
+    @Temporal(TemporalType.DATE)
     private Date date;
 
     public Post() {
