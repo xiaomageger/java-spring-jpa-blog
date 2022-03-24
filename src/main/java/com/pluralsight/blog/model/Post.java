@@ -6,10 +6,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
+@Entity
 public class Post {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String lead;
+    @Column(length=1000000)
+    @Lob
+    // used to store the data as binary data
     private String body;
     private String author;
     private Date date;
