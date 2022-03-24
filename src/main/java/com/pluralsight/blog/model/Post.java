@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import com.pluralsight.blog.model.Category;
 
 
 @Entity
@@ -23,6 +24,17 @@ public class Post {
 
     public Post() {
         super();
+    }
+
+    @ManyToOne
+    private Category category;
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Category getCategory() {
+        return category;
     }
 
     public Post(Long id, String title, String lead, String body, String author, Date date) {
